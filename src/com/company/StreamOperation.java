@@ -13,7 +13,7 @@ public class StreamOperation {
     public void ToStream(Writer writer, Person personToWriteTo){
 
     }
-    public Person FromStream(Reader reader){
-        return new Person(reader.toString());
-    }
+//    public Person FromStream(Reader reader){
+//        return new Person(reader.toString());
+//    }
 }
