@@ -14,16 +14,40 @@ public class PhoneNumber {
     protected int number;
 
     /**
-     *
-     * @param country Country Kennungszahl
-     * @param areacode area Kennungszahl
-     * @param number restliche Nummer
-     * Nimmt diese 3 Werte und erstellte eine PhoneNumber Klasse
+     * @param country  Country Kennungszahl nur schweizer oesterreichische oder deutsche Nummern (41,43,49)
+     * @param areacode area Kennungszahl ist 3 lang
+     * @param number   restliche Nummer ist 8 zeichen Lang
+     *                 Nimmt diese 3 Werte und erstellte eine PhoneNumber Klasse
      */
-    public PhoneNumber(int country, int areacode, int number) {
-        this.country = country;
-        this.areacode = areacode;
-        this.number = number;
+    public PhoneNumber(int country, int areacode, int number) throws IllegalPhoneNumberException {
+
+
+            if (!(country == 41 || country == 43 || country == 49)){
+                throw new IllegalPhoneNumberException(IllegalPhoneNumberException.COUNTRY_ILLEGAL);
+            } else {
+                this.country = country;
+            }
+
+            if (areacode < 100 || areacode > 1000){
+                throw new IllegalPhoneNumberException(IllegalPhoneNumberException.AREA_ILLEGAL);
+            } else {
+                this.areacode = areacode;
+            }
+
+            if (number < 1000000 || number > 10000000){
+                throw new IllegalPhoneNumberException(IllegalPhoneNumberException.NUMBER_ILLEGAL);
+            } else {
+                this.number=number;
+            }
+
+    }
+
+    /**
+     * @param number String aus dem die Nummer herausgelesen wird
+     *               Nimmt diesen 1 Wert und erstellte eine PhoneNumber Klasse
+     */
+    public PhoneNumber(String number) throws IllegalPhoneNumberException {
+        this(Integer.parseInt(number.substring(0, 1)),Integer.parseInt(number.substring(2, 4)),Integer.parseInt(number.substring(5)));
     }
 
     @Override
@@ -36,7 +60,6 @@ public class PhoneNumber {
     }
 
     /**
-     *
      * @return Country Kennungszahl
      */
     public int getCountry() {
@@ -44,7 +67,6 @@ public class PhoneNumber {
     }
 
     /**
-     *
      * @return area Kennungszahl
      */
     public int getAreacode() {
@@ -52,7 +74,6 @@ public class PhoneNumber {
     }
 
     /**
-     *
      * @return restliche Nummer
      */
     public int getNumber() {
@@ -61,12 +82,23 @@ public class PhoneNumber {
 
     /**
      *
-     * @param number String aus dem die Nummer herausgelesen wird
-     *               Nimmt diesen 1 Wert und erstellte eine PhoneNumber Klasse
+     * @param phNmbr Telefonnummer die zum pruefen ist
+     * @return gibt zurueck ob die gegebene Telefonnummer valid ist oder nicht
      */
-    public PhoneNumber(String number){
-        country= Integer.parseInt(number.substring(0,1));
-        areacode= Integer.parseInt(number.substring(2,4));
-        this.number = Integer.parseInt(number.substring(5));
+    public boolean isValid(PhoneNumber phNmbr) {
+        if (!(phNmbr.getCountry() == 41 || phNmbr.getCountry() == 43 || phNmbr.getCountry() == 49)){
+            return false;
+        }
+
+        if (phNmbr.getAreacode() < 100 || phNmbr.getAreacode() > 1000){
+           return false;
+        }
+
+        if (phNmbr.getNumber() < 1000000 || phNmbr.getNumber() > 10000000){
+return false;
+        }
+        return true;
     }
+
+
 }

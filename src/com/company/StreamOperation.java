@@ -14,6 +14,6 @@ public class StreamOperation {
 
     }
     public Person FromStream(Reader reader){
-        return new Person();
+        return new Person(reader.toString());
     }
 }
