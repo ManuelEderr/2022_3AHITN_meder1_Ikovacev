@@ -10,12 +10,25 @@ package com.company;
 import java.io.*;
 
 public class StreamOperation {
-
+    /**
+     *
+     * @param writer Writer der definiert in welche File geschrieben wird
+     * @param personToWriteTo Die Person die geschrieben werden soll
+     * @throws IOException
+     */
     public static void ToStream(FileWriter writer, Person personToWriteTo) throws IOException {
        writer.write(personToWriteTo.toString()+"\n");
 
     }
-//    public Person FromStream(Reader reader){
-//        return new Person(reader.toString());
-//    }
+
+    /**
+     *
+     * @param reader Reader
+     * @return Person gibt ein Objekt der Klasse Person zurueck
+     * @throws IllegalPhoneNumberException
+     */
+    public Person FromStream(Reader reader) throws IllegalPhoneNumberException, IOException {
+        BufferedReader br = new BufferedReader(reader);
+        return new Person(br.readLine());
+    }
 }

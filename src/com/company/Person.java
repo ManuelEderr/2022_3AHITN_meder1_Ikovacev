@@ -19,6 +19,15 @@ public class Person {
         this.phone = phone;
     }
 
+    public Person(String person) throws IllegalPhoneNumberException {
+        String[] array = person.split(";");
+        this.name = array[0];
+        this.givenname = array[1];
+        this.nickname = array[2];
+        this.birthday = new Date(array[3]);
+        this.phone = new PhoneNumber(array[4]);
+    }
+
     @Override
     public String toString() {
         return name+";"+givenname+";"+nickname+";"+birthday+";"+phone;
