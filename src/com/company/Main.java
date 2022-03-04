@@ -10,14 +10,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         try {
             File f = new File("Person.csv");
-            Writer wr = new FileWriter(f);
             FileReader fileReader = new FileReader(f);
             BufferedReader reader = new BufferedReader(fileReader);
-            reader.readLine();
-
+            String l = reader.readLine();
+            System.out.println(l);
             Person mani =StreamOperation.FromStream(reader);
             System.out.println(mani);
 
+           // Writer wr = new FileWriter(f);
         } catch (FileNotFoundException | IllegalPhoneNumberException | IllegalDateException e) {
             e.printStackTrace();
             /**

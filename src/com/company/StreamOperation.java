@@ -2,7 +2,7 @@ package com.company;
 
 /**
  * @author ikovacev
- * @lastChange 03.03.2022
+ * @lastChange 04.03.2022
  *
  */
 
@@ -26,6 +26,7 @@ public class StreamOperation {
      * @param reader Reader
      * @return Person gibt ein Objekt der Klasse Person zurueck
      * @throws IllegalPhoneNumberException
+     * @throws IllegalDateException
      */
     public static Person FromStream(Reader reader) throws IllegalPhoneNumberException, IOException, IllegalDateException {
         BufferedReader br = new BufferedReader(reader);
