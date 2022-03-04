@@ -21,6 +21,12 @@ public class Date {
         this.year = year;
     }
 
+    /**
+     *
+     * @param date String aus dem das Datum gemacht wird
+     * @throws IllegalDateException
+     *  Nimmt einen String und macht aus diesem ein Objekt der Klasse Date
+     */
     public Date(String date) throws IllegalDateException {
 
         String[] tempVals = date.split("\\.");

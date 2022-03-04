@@ -16,7 +16,7 @@ public class StreamOperation {
      * @param personToWriteTo Die Person die geschrieben werden soll
      * @throws IOException
      */
-    public static void ToStream(FileWriter writer, Person personToWriteTo) throws IOException {
+    public static void ToStream(Writer writer, Person personToWriteTo) throws IOException {
        writer.write(personToWriteTo.toString()+"\n");
 
     }
