@@ -19,7 +19,7 @@ public class Main {
             Person mani =StreamOperation.FromStream(reader);
             System.out.println(mani);
             Person siegfried = new Person("Captain","America","Cap",new Date("04.07.1918"),new PhoneNumber(43,660,4134567));
-            //System.out.println(siegfried);
+            System.out.println(siegfried);
        //     Writer wr = new FileWriter(f);
         //    StreamOperation.ToStream(wr, siegfried);
 
