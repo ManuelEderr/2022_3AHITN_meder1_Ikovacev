@@ -25,14 +25,15 @@ public class Main {
             }
 
 
-            for (int i = 0; i <= arrayList.size(); i++) {
+            for (int i = 1; i < arrayList.size(); i++) {
                 String[] currentStrings = arrayList.get(i).split(";");
                 d = new Date(currentStrings[3]);
+                phoneNumber = new PhoneNumber(currentStrings[4]);
                 person = new Person(currentStrings[0], currentStrings[1], currentStrings[2], d, phoneNumber);
             }
             StreamOperation.ToStream(new FileWriter("Person.csv"), person);
 
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | IllegalPhoneNumberException e) {
             e.printStackTrace();
         }
     }
