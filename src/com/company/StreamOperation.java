@@ -5,12 +5,12 @@ package com.company;
  * @lastChange 03.03.2022
  *
  */
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
 
 public class StreamOperation {
 
-    public void ToStream(Writer writer, Person personToWriteTo){
+    public static void ToStream(FileWriter writer, Person personToWriteTo) throws IOException {
+       writer.write(personToWriteTo.toString()+"\n");
 
     }
 //    public Person FromStream(Reader reader){
