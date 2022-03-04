@@ -33,7 +33,7 @@ public class Main {
             }
             StreamOperation.ToStream(new FileWriter("Person.csv"), person);
 
-        } catch (FileNotFoundException | IllegalPhoneNumberException e) {
+        } catch (FileNotFoundException | IllegalPhoneNumberException | IllegalDateException e) {
             e.printStackTrace();
         }
     }

@@ -19,7 +19,7 @@ public class Person {
         this.phone = phone;
     }
 
-    public Person(String person) throws IllegalPhoneNumberException {
+    public Person(String person) throws IllegalPhoneNumberException, IllegalDateException {
         String[] array = person.split(";");
         this.name = array[0];
         this.givenname = array[1];

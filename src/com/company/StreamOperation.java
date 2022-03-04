@@ -27,7 +27,7 @@ public class StreamOperation {
      * @return Person gibt ein Objekt der Klasse Person zurueck
      * @throws IllegalPhoneNumberException
      */
-    public Person FromStream(Reader reader) throws IllegalPhoneNumberException, IOException {
+    public Person FromStream(Reader reader) throws IllegalPhoneNumberException, IOException, IllegalDateException {
         BufferedReader br = new BufferedReader(reader);
         return new Person(br.readLine());
     }
