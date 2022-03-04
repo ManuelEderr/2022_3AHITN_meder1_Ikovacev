@@ -56,6 +56,15 @@ public class Date {
         return returner;
     }
 
+    @Override
+    public String toString() {
+        return "Date{" +
+                "day=" + day +
+                ", mon=" + mon +
+                ", year=" + year +
+                '}';
+    }
+
     boolean isValid(Date d) throws IllegalDateException {
 
         String date = String.valueOf(d.day) + "/" + String.valueOf(d.mon) + "/" + String.valueOf(d.year);

@@ -16,7 +16,8 @@ public class Main {
             System.out.println(l);
             Person mani =StreamOperation.FromStream(reader);
             System.out.println(mani);
-
+            Person siegfried = new Person("Captain","America","Cap",new Date("04.07.1918"),new PhoneNumber(43,660,4134567));
+            System.out.println(siegfried);
            // Writer wr = new FileWriter(f);
         } catch (FileNotFoundException | IllegalPhoneNumberException | IllegalDateException e) {
             e.printStackTrace();

@@ -47,7 +47,7 @@ public class PhoneNumber {
      *               Nimmt diesen 1 Wert und erstellte eine PhoneNumber Klasse
      */
     public PhoneNumber(String number) throws IllegalPhoneNumberException {
-        this(Integer.parseInt(number.substring(0, 1)),Integer.parseInt(number.substring(2, 4)),Integer.parseInt(number.substring(5)));
+        this(Integer.parseInt(number.substring(0, 2)),Integer.parseInt(number.substring(2, 5)),Integer.parseInt(number.substring(6)));
     }
 
     @Override
