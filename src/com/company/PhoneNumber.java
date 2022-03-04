@@ -2,7 +2,7 @@ package com.company;
 
 /**
  * @author ikovacev
- * @lastChange 03.03.2022
+ * @lastChange 04.03.2022
  * Phonenumber Klasse, speichert die Telefonnummer in 3 verschiedenen Teilen,
  * areacode...fuer Ortskennung
  * country...fuer landkennung
