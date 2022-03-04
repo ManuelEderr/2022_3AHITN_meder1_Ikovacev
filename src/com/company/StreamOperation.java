@@ -5,6 +5,8 @@ package com.company;
  * @lastChange 03.03.2022
  *
  */
+
+
 import java.io.*;
 
 public class StreamOperation {

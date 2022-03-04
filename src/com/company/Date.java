@@ -4,6 +4,8 @@ package com.company;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Manuel Eder
@@ -48,20 +50,23 @@ public class Date {
     }
 
     boolean isValid(Date d){
-        boolean r;
 
         String date = String.valueOf(d.day) + "/" + String.valueOf(d.mon) + "/" + String.valueOf(d.year);
+        boolean status = false;
 
-        DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        sdf.setLenient(false);
-        try {
-            sdf.parse(date);
-        } catch (ParseException e) {
-            r = false;
+        String pattern = "(0?[1-9]|[12][0-9]|3[01])\\/(0?[1-9]|1[0-2])\\/([0-9]{4})";
+        boolean flag = false;
+        if (date.matches(pattern)) {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            dateFormat.setLenient(false);
+            try {
+                dateFormat.parse(date);
+                status = true;
+            } catch (Exception e) {
+                status = false;
+            }
         }
-        r = true;
-
-        return r;
+        return status;
     }
 }
 
