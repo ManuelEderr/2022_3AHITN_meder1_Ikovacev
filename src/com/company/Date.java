@@ -59,7 +59,7 @@ public class Date {
     boolean isValid(Date d) throws IllegalDateException {
 
         String date = String.valueOf(d.day) + "/" + String.valueOf(d.mon) + "/" + String.valueOf(d.year);
-        boolean status = false;
+        boolean status = true;
 
         if (!String.valueOf(d.getDay()).matches("(0?[1-9]|[12][0-9]|3[01])")){
             throw new IllegalDateException(IllegalDateException.DAY_ILLEGAL);
@@ -67,20 +67,10 @@ public class Date {
         if (!String.valueOf(d.getMon()).matches("(0?[1-9]|1[0-2])")){
             throw new IllegalDateException(IllegalDateException.MON_ILLEGAL);
         }
-
-
-        String pattern = "(0?[1-9]|[12][0-9]|3[01])\\.(0?[1-9]|1[0-2])\\.([0-9]{4})";
-        boolean flag = false;
-        if (date.matches(pattern)) {
-            DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-            dateFormat.setLenient(false);
-            try {
-                dateFormat.parse(date);
-                status = true;
-            } catch (Exception e) {
-                status = false;
-            }
+        if (!String.valueOf(d.getYear()).matches("([0-9]{4})")){
+            status = false;
         }
+
         return status;
     }
 }
