@@ -18,7 +18,6 @@ public class StreamOperation {
      */
     public static void ToStream(Writer writer, Person personToWriteTo) throws IOException {
        writer.write(personToWriteTo.toString()+"\n");
-
     }
 
     /**

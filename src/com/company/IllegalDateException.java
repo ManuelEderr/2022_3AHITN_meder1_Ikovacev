@@ -3,7 +3,7 @@ package com.company;
 /**
  * @author Manuel Eder
  * <p>
- * Überprüft ob das Datum valid ist.
+ * Wenn das Datum nicht valid ist, kann wird der Fehlercode mit einer Exception zurückgegeben.
  */
 
 public class IllegalDateException extends Exception{

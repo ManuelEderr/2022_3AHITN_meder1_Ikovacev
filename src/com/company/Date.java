@@ -42,18 +42,34 @@ public class Date {
 
     }
 
+    /**
+     *
+     * @return der Tag wird zurückgegeben
+     */
     public int getDay() {
         return day;
     }
 
+    /**
+     *
+     * @return der Monat wird zurückgegeben
+     */
     public int getMon() {
         return mon;
     }
 
+    /**
+     *
+     * @return das Jahr wird zurückgegeben
+     */
     public int getYear() {
         return year;
     }
 
+    /**
+     * Überprüft ob das Jahr ein Schaltjahr ist
+     * @return true = Schaltjahr; false = kein Schaltjahr
+     */
     boolean isLeapYear(){
         boolean returner = false;
         if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0)) {
@@ -62,6 +78,10 @@ public class Date {
         return returner;
     }
 
+    /**
+     *
+     * @return Gibt das Datum zurück
+     */
     @Override
     public String toString() {
         return "Date{" +
@@ -71,6 +91,12 @@ public class Date {
                 '}';
     }
 
+    /**
+     * Überprüft ob das übergebene Datum richtig ist
+     * @param d Das zu überprüfende Datum
+     * @return true = es ist valid; false = nicht valid
+     * @throws IllegalDateException Exception falls das Datum falsch ist
+     */
     boolean isValid(Date d) throws IllegalDateException {
 
         String date = String.valueOf(d.day) + "/" + String.valueOf(d.mon) + "/" + String.valueOf(d.year);
@@ -88,5 +114,8 @@ public class Date {
 
         return status;
     }
+
+
+
 }
 

@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -14,11 +15,13 @@ public class Main {
             BufferedReader reader = new BufferedReader(fileReader);
             String l = reader.readLine();
             System.out.println(l);
+
             Person mani =StreamOperation.FromStream(reader);
             System.out.println(mani);
             Person siegfried = new Person("Captain","America","Cap",new Date("04.07.1918"),new PhoneNumber(43,660,4134567));
-            System.out.println(siegfried);
-           // Writer wr = new FileWriter(f);
+            //System.out.println(siegfried);
+       //     Writer wr = new FileWriter(f);
+        //    StreamOperation.ToStream(wr, siegfried);
 
         } catch (FileNotFoundException | IllegalPhoneNumberException | IllegalDateException e) {
             e.printStackTrace();
