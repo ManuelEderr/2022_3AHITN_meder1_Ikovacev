@@ -1,10 +1,6 @@
 package com.company;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -13,15 +9,20 @@ public class Main {
             File f = new File("Person.csv");
             FileReader fileReader = new FileReader(f);
             BufferedReader reader = new BufferedReader(fileReader);
-            String l = reader.readLine();
-            System.out.println(l);
+            reader.readLine();
 
-            Person mani =StreamOperation.FromStream(reader);
+
+            Person mani =StreamOperation.FROMSTREAM(reader);
             System.out.println(mani);
-            Person siegfried = new Person("Captain","America","Cap",new Date("04.07.1918"),new PhoneNumber(43,660,4134567));
-            System.out.println(siegfried);
-       //     Writer wr = new FileWriter(f);
-        //    StreamOperation.ToStream(wr, siegfried);
+            Person julian = new Person("Julian","Huber","Jul",new Date("30.09.2004"),new PhoneNumber(41,660,1807537));
+            System.out.println(julian);
+
+            Writer wr = new FileWriter("PersonsToWrite.csv");
+            StreamOperation.TOSTREAM(wr, julian);
+            StreamOperation.TOSTREAM(wr,mani);
+
+
+
 
         } catch (FileNotFoundException | IllegalPhoneNumberException | IllegalDateException e) {
             e.printStackTrace();

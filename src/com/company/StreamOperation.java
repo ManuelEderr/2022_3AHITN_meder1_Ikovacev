@@ -16,7 +16,7 @@ public class StreamOperation {
      * @param personToWriteTo Die Person die geschrieben werden soll
      * @throws IOException
      */
-    public static void ToStream(Writer writer, Person personToWriteTo) throws IOException {
+    public static void TOSTREAM(Writer writer, Person personToWriteTo) throws IOException {
        writer.write(personToWriteTo.toString()+"\n");
     }
 
@@ -27,7 +27,7 @@ public class StreamOperation {
      * @throws IllegalPhoneNumberException
      * @throws IllegalDateException
      */
-    public static Person FromStream(Reader reader) throws IllegalPhoneNumberException, IOException, IllegalDateException {
+    public static Person FROMSTREAM(Reader reader) throws IllegalPhoneNumberException, IOException, IllegalDateException {
         BufferedReader br = new BufferedReader(reader);
         return new Person(br.readLine());
     }
