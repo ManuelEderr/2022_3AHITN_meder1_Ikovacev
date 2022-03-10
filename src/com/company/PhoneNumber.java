@@ -52,11 +52,7 @@ public class PhoneNumber {
 
     @Override
     public String toString() {
-        return "PhoneNumber{" +
-                "country=" + country +
-                ", areacode=" + areacode +
-                ", number=" + number +
-                '}';
+        return Integer.toString(country)+Integer.toString(areacode)+Integer.toString(number);
     }
 
     /**
