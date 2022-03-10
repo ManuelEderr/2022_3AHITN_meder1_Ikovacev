@@ -2,11 +2,11 @@ package com.company;
 
 /**
  * @author ikovacev
- * @lastChange 04.03.2022
- * Phonenumber Klasse, speichert die Telefonnummer in 3 verschiedenen Teilen,
- * areacode...fuer Ortskennung
- * country...fuer landkennung
- * number...fuer restliche nummer
+ * @lastChange 10.03.2022
+ * Phonenumber Klasse, speichert die Telefonnummer in 3 verschiedenen Teilen, <br />
+ * areacode...fuer Ortskennung <br />
+ * country...fuer landkennung <br />
+ * number...fuer restliche nummer <br />
  */
 public class PhoneNumber {
     protected int country;
@@ -16,7 +16,7 @@ public class PhoneNumber {
     /**
      * @param country  Country Kennungszahl nur schweizer oesterreichische oder deutsche Nummern (41,43,49)
      * @param areacode area Kennungszahl ist 3 lang
-     * @param number   restliche Nummer ist 8 zeichen Lang
+     * @param number   restliche Nummer ist 8 zeichen Lang<br /><br />
      *                 Nimmt diese 3 Werte und erstellte eine PhoneNumber Klasse
      */
     public PhoneNumber(int country, int areacode, int number) throws IllegalPhoneNumberException {
@@ -43,7 +43,7 @@ public class PhoneNumber {
     }
 
     /**
-     * @param number String aus dem die Nummer herausgelesen wird
+     * @param number String aus dem die Nummer herausgelesen wird <br /><br />
      *               Nimmt diesen 1 Wert und erstellte eine PhoneNumber Klasse
      */
     public PhoneNumber(String number) throws IllegalPhoneNumberException {

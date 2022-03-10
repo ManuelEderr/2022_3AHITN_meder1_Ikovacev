@@ -2,7 +2,7 @@ package com.company;
 
 /**
  * @author ikovacev
- * @lastChange 03.03.2022
+ * @lastChange 10.03.2022
  * Zustaendig fuer Fehler die gemacht werden koennen bei dem erstellen der PhoneNumber Klasse
  */
 
@@ -16,6 +16,8 @@ public class IllegalPhoneNumberException extends Exception {
     /**
      *
      * @param type der aufgretretene Fehler beim erstellen der PhoneNumber
+     *             Setzt die Type der Exception auf dem aufgetretenen Fehler <br/>
+     *             Moegliche Typen: COUNTRY_ILLEGAL <br/> AREA_ILLEGAL <br/> NUMBER_ILLEGAL
      */
     IllegalPhoneNumberException(int type) {
         this.type = type;
